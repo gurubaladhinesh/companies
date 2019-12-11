@@ -41,6 +41,21 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>com.arangodb</groupId>
+      <artifactId>arangodb-spring-data</artifactId>
+      <version>3.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>4.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>4.1.1</version>
+    </dependency>
   </dependencies>
 
   <build>
