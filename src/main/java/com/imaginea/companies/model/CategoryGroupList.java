@@ -6,25 +6,21 @@ import com.arangodb.springframework.annotation.Relations;
 import com.arangodb.springframework.annotation.Relations.Direction;
 import java.util.Collection;
 import lombok.Data;
+import lombok.NonNull;
 import org.springframework.data.annotation.Id;
 
-@Document("company")
+@Document("categorygrouplist")
 @Data
-@HashIndex(fields = {"name","domain"}, unique = true)
-public class Company {
+@HashIndex(fields = {"name"}, unique = true)
+public class CategoryGroupList {
 
   @Id
   private String id;
 
+  @NonNull
   private String name;
 
-  private String domain;
+  @Relations(edges = CompanyCategoryGroupListRelation.class, lazy = true, direction = Direction.OUTBOUND)
+  private Collection<CategoryGroupList> categoryGroupLists;
 
-  @Relations(edges = CompanyCategoryListRelation.class, lazy = true, direction = Direction.OUTBOUND)
-  private Collection<CategoryList> categoryLists;
-
-  public Company(String name, String domain) {
-    this.name = name;
-    this.domain = domain;
-  }
 }

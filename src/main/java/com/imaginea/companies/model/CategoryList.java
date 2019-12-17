@@ -21,6 +21,6 @@ public class CategoryList {
   private String name;
 
   @Relations(edges = CompanyCategoryListRelation.class, lazy = true, direction = Direction.OUTBOUND)
-  private Collection<Company> companies;
+  private Collection<CategoryList> categoryLists;
 
 }
